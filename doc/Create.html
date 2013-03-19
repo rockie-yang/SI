@@ -1,0 +1,32 @@
+<!-- default
+earth
+modern-blue
+mscgen
+omegapple
+qsd
+rose
+roundgreen
+napkin
+-->
+
+<div class=wsd wsd_style="napkin" ><pre>
+
+Client->Create: create(dn, json)
+Create->JSONSpliter: splitJson(dn, json)
+Create->Schema: fillInDefaultValue
+Create->Schema: typeConverter
+Create->Schema: toLDAPType
+
+Create->ValueKeeper: get(dn)
+ValueKeeper->LDAPWrapper: get&StoreIfNotExist(dn)
+Create->LDAPWrapper: create(dn, attributes)
+
+</pre></div><script type="text/javascript" src="http://www.websequencediagrams.com/service.js"></script>
+
+<div class=wsd wsd_style="napkin" ><pre>
+
+LDAPWrapper->Logger: store(dn, attributes)
+LDAPWrapper->DirContext: create(dn, attributes)
+LDAPWrapper->History: rollbackIfException
+
+</pre></div>

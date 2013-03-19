@@ -1,0 +1,21 @@
+<!-- default
+earth
+modern-blue
+mscgen
+omegapple
+qsd
+rose
+roundgreen
+napkin
+-->
+
+<div class=wsd wsd_style="napkin" ><pre>
+
+LDAPWrapper->Logger: storeRequest(dn, attributes)
+LDAPWrapper->DirContext: create(dn, attributes)
+option IfExceptionThrown
+    LDAPWrapper->History: rollbackIfConfigured
+end
+LDAPWrapper->Logger: storeResponse(dn, attributes)
+
+</pre></div><script type="text/javascript" src="http://www.websequencediagrams.com/service.js"></script>
